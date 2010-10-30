@@ -4,7 +4,9 @@ require 'fileutils'
 require 'open-uri'
 require 'yaml'
 
-unless node = ARGV[0]
+node = ARGV[0] || "#{ENV['HOME']}/.cook"
+
+unless File.exist? node
   abort "cook node.json"
 end
 
