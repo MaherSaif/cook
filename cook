@@ -26,10 +26,18 @@ File.open(json_attribs = "#{root}/node.json", 'w') do |f|
 end
 
 cookbooks = YAML.load(open(json_attribs))['cookbooks']
-cookbook_path = cookbooks.to_enum(:each_with_index).map do |url, index|
+cookbook_path = cookbooks.to_enum(:each_with_index).map do |path, index|
   target = "#{root}/cookbooks-#{index}"
+
+  FileUtils.rm_rf target
   FileUtils.mkdir_p target
-  system "curl -sL #{url.inspect} | tar -xz -C #{target} -m --strip 1"
+
+  if File.exist? path
+    system "cp -R #{path.inspect} #{target}"
+  else
+    system "curl -sL #{path.inspect} | tar -xz -C #{target} -m --strip 1"
+  end
+
   target
 end
 
