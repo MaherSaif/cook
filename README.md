@@ -4,8 +4,8 @@ cook wraps the `chef-solo` with saner defaults so you don't have to deal with cr
 
 ## INSTALL
 
-   curl https://github.com/josh/cook/raw/master/bin/cook > ~/bin/cook
-   curl https://github.com/josh/cook/raw/master/example.json > ~/.cook
+    curl https://github.com/josh/cook/raw/master/bin/cook > ~/bin/cook
+    curl https://github.com/josh/cook/raw/master/example.json > ~/.cook
 
 You don't need to gem install chef, cook bundles it the first time its ran.
 
