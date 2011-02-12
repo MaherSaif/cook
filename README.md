@@ -23,7 +23,7 @@ K, so theres some configuration, but just one file.
       ]
     }
 
-`~/.cook` is a standard chief json attributes files with some extra magic. You list your cookbook urls here instead of repeating it as a command line option. Checkout https://github.com/josh/osx-cookbooks to get you started.
+`~/.cook` is a standard chief json attributes files with some extra magic. You list your cookbook urls here instead of repeating it as a command line option. Checkout [josh/osx-cookbooks](https://github.com/josh/osx-cookbooks) to get you started.
 
 ## USAGE
 
