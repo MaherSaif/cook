@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+#!/usr/bin/ruby
 
 require 'fileutils'
 require 'open-uri'
@@ -14,7 +14,7 @@ FileUtils.mkdir_p root = "/tmp/chef-solo"
 
 unless File.exist? gemhome = "#{root}/ruby"
   FileUtils.mkdir_p gemhome
-  system "gem install chef --no-rdoc --no-ri --install-dir #{gemhome}"
+  system "/usr/bin/gem install chef --no-rdoc --no-ri --install-dir #{gemhome}"
 end
 
 ENV['PATH']    = Dir["#{gemhome}/gems/*/bin"].join(':') + ":#{ENV['PATH']}"
