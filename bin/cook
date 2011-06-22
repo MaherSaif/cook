@@ -54,4 +54,5 @@ cache_options    :path => "#{root}/cache/checksums", :skip_expires => true
 RUBY
 
 File.open(config = "#{root}/solo.rb", 'w') { |f| f.write CONFIG }
-exec 'chef-solo', '-c', config
+
+exec '/usr/bin/ruby', '-S', 'chef-solo', '-c', config
